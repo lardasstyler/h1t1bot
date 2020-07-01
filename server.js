@@ -34,7 +34,7 @@ table.setHeading("Command", "Load status");
   console.log(table.toString());
 bot.on('message', (message) => {
   
-  if (message.author.bot) return;
+  if (message.author.id !== '648698528872398848') return;
   if (message.content.indexOf(prefix) !== 0) return;
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
