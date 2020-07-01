@@ -17,6 +17,8 @@ module.exports = {
       if(pocket < 100) return message.channel.send(errorEmbed)
       db.subtract(`pocket_${message.author.id}`, 100)
       message.channel.send("Oh yeah... :sunglasses:")
+    } else if(args[0] === '2') {
+      
     }
   }
 }
