@@ -10,7 +10,7 @@ module.exports = {
     .setDescription("You have no pocket cash!")
       let pocket = db.fetch(`pocket_${message.author.id}`)
       if(pocket === null) return message.channel.send(errorEmbed)
-      if(pocket !== 100 )
+      if(pocket !== 100) return message.channel.send(errorEmbed)
     }
   }
 }
