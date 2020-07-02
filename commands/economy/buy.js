@@ -66,6 +66,13 @@ module.exports = {
     } else if(args[0] === '9') {
       let pocket = db.fetch(`pocket_${message.author.id}`)
       if(pocket === null) return message.channel.send(errorEmbed)
+      if(pocket < 69696969) return message.channel.send(errorEmbed1)
+      db.subtract(`pocket_${message.author.id}`, 69696969)
+      message.channel.send("hot hot hot seggs");
+      message.member.roles.add("728100193320435724")
+    } else if(args[0] === '10') {
+      let pocket = db.fetch(`pocket_${message.author.id}`)
+      if(pocket === null) return message.channel.send(errorEmbed)
       if(pocket < 100000000) return message.channel.send(errorEmbed1)
       db.subtract(`pocket_${message.author.id}`, 100000000)
       message.channel.send("King, your trophy has been added!");
