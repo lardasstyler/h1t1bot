@@ -3,14 +3,17 @@ const fetch = require('node-fetch');
 module.exports = {
   name: "meme",
   run: async(bot, message, args) =>{
-    message.channel.send("Meme is processing")
+    message.channel.send("Meme is processing, this may take a while.").then(m => m.delete({ timeout: 4500}));
     fetch('https://meme-api.herokuapp.com/gimme')
    .then(res => res.json())
    .then(json => {
    let embed = new Discord.MessageEmbed()
-   .setTitle(json.title)
+   .setTitle(`${json.title}`)
    .setImage(json.url)
-   .setFooter(`Link: ${json.postLink} | Subreddit: ${json.subreddit}`)
+   .setColor(message.member.displayHexColor === '#000000' ? '#ffffff' : message.member.displayHexColor)
+   .setFooter(`${json.postLink} • ${json.subreddit}`)
+   .setTimestamp()
+   message.channel.send(embed)
    });
   }
 }
