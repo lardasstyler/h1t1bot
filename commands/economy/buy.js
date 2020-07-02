@@ -43,6 +43,19 @@ module.exports = {
       if(pocket < 10000) return message.channel.send(errorEmbed1)
       db.subtract(`pocket_${message.author.id}`, 10000)
       message.channel.send("VRRR VRRRRRRR")
+    } else if(args[0] === '6') {
+      let pocket = db.fetch(`pocket_${message.author.id}`)
+      if(pocket === null) return message.channel.send(errorEmbed)
+      if(pocket < 69420) return message.channel.send(errorEmbed1)
+      db.subtract(`pocket_${message.author.id}`, 69420)
+      message.channel.send("new dad! you think this one will run off?")
+    } else if(args[0] === '7') {
+      let pocket = db.fetch(`pocket_${message.author.id}`)
+      if(pocket === null) return message.channel.send(errorEmbed)
+      if(pocket < 100000) return message.channel.send(errorEmbed1)
+      db.subtract(`pocket_${message.author.id}`, 100000)
+      const attatchment = new Discord.Attachment('https://cdn.discordapp.com/attachments/719488320450592829/727755769918783548/image0.jpg')
+      message.channel.send("range rover sports truck", attatchment);
     }
   }
 }
