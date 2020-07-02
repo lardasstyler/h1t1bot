@@ -12,8 +12,10 @@ module.exports = {
     if(message.content.includes('-')) return message.channel.send("you cant add negative money.");
     if(args[1] === 'pocket') {
       db.add(`pocket_${user.user.id}`, args[2])
+      message.channel.send(`Successfully added **$${args[2]}** to ${user.user}'s pocket.`)
     } else if(args[1] === 'bank') {
       db.add(`bank_${user.user.id}`, args[2])
+      message.channel.send(`Successfully added **$${args[2]}** to ${user.user}'s bank.`)
     }
   }
 }

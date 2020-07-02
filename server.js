@@ -8,7 +8,7 @@ const db = require('quick.db');
 var schedule = require('node-schedule');
 
 bot.on("ready", message => {
-bot.user.setActivity(`keyboard sounds`, { type: "LISTENING"})
+bot.user.setActivity(`Dancing Tonight`, { type: "LISTENING"})
 })
 const ascii = require("ascii-table");
 let table = new ascii("Commands");
@@ -34,7 +34,6 @@ table.setHeading("Command", "Load status");
   console.log(table.toString());
 bot.on('message', (message) => {
   
-  if (message.author.id !== '648698528872398848') return;
   if (message.content.indexOf(prefix) !== 0) return;
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
