@@ -54,8 +54,22 @@ module.exports = {
       if(pocket === null) return message.channel.send(errorEmbed)
       if(pocket < 100000) return message.channel.send(errorEmbed1)
       db.subtract(`pocket_${message.author.id}`, 100000)
-      const attatchment = new Discord.Attachment('https://cdn.discordapp.com/attachments/719488320450592829/727755769918783548/image0.jpg')
-      message.channel.send("range rover sports truck", attatchment);
+      message.channel.send("range rover sports truck", {files: ['https://cdn.discordapp.com/attachments/719488320450592829/727755769918783548/image0.jpg']});
+    } else if(args[0] === '8') {
+      let pocket = db.fetch(`pocket_${message.author.id}`)
+      if(pocket === null) return message.channel.send(errorEmbed)
+      if(pocket < 500000) return message.channel.send(errorEmbed1)
+      db.subtract(`pocket_${message.author.id}`, 500000)
+      message.channel.send("Admins have been notified!");
+      let logs = message.guild.channels.cache.get("728087458780020790");
+      logs.send(`**${message.author.tag}** bought a custom role and is waiting for their role. ||<@&718541713005871125>||`)
+    } else if(args[0] === '9') {
+      let pocket = db.fetch(`pocket_${message.author.id}`)
+      if(pocket === null) return message.channel.send(errorEmbed)
+      if(pocket < 100000000) return message.channel.send(errorEmbed1)
+      db.subtract(`pocket_${message.author.id}`, 100000000)
+      message.channel.send("King, your trophy has been added.!");
+      message.member.roles.add("728088829554327582")
     }
   }
 }
