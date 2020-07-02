@@ -24,7 +24,13 @@ module.exports = {
       if(pocket === null) return message.channel.send(errorEmbed)
       if(pocket < 500) return message.channel.send(errorEmbed1)
       db.subtract(`pocket_${message.author.id}`, 500)
-      message.channel.send("Oh yeah... :sunglasses:")
+      message.channel.send("Nice! New baseball cap. Hopefully you put it to good use! 🧢")
+    } else if(args[0] === '3') {
+      let pocket = db.fetch(`pocket_${message.author.id}`)
+      if(pocket === null) return message.channel.send(errorEmbed)
+      if(pocket < 1000) return message.channel.send(errorEmbed1)
+      db.subtract(`pocket_${message.author.id}`, 1000)
+      message.channel.send("What's on this piece of pizza? Cheese? Bacon? Pineapples? :pizza:")
     }
   }
 }
