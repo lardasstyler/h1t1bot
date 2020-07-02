@@ -68,7 +68,7 @@ module.exports = {
       if(pocket === null) return message.channel.send(errorEmbed)
       if(pocket < 100000000) return message.channel.send(errorEmbed1)
       db.subtract(`pocket_${message.author.id}`, 100000000)
-      message.channel.send("King, your trophy has been added.!");
+      message.channel.send("King, your trophy has been added!");
       message.member.roles.add("728088829554327582")
     }
   }
