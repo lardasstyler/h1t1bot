@@ -7,13 +7,7 @@ module.exports = {
     fetch('https://meme-api.herokuapp.com/gimme')
    .then(res => res.json())
    .then(json => {
-   let embed = new Discord.MessageEmbed()
-   .setTitle(`${json.title}`)
-   .setImage(json.url)
-   .setColor(message.member.displayHexColor === '#000000' ? '#ffffff' : message.member.displayHexColor)
-   .setFooter(`${json.postLink} • ${json.subreddit}`)
-   .setTimestamp()
-   message.channel.send(embed)
+   message.channel.send(`**${json.title}**`, {files: [json.url]})
    });
   }
 }
